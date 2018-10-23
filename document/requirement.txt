@@ -1,0 +1,11 @@
+Stock Balance => Operation Currency When Do operation Sell 
+Example Customer A => Top UP balance 200$ Money will deduct 
+Transaction Transfer to Account
+History Record => Customer has been transfer 
+
+Account Operation of Owner => 
+Normally we can give credit to user account 1, 2, 3, 
+
+Add punish loan form 
+
+Exchange Base Customer Type

@@ -1,0 +1,1133 @@
+{
+	"info": {
+		"_postman_id": "b6fad9a4-b2db-4803-9080-37b0abe8c833",
+		"name": "KHPay_local",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Login/Logout",
+			"item": [
+				{
+					"name": "First Login",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "DeviceID",
+								"value": "DLUyc4VN5gdK2M4Hf5ZlH7dmEoO2DcowALRhzTrf"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "DeviceType",
+								"value": "iophoe"
+							},
+							{
+								"key": "country_code",
+								"value": "1212"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"telephone\":\"081397071\",\n  \"country_code\":\"+855\",\n  \"password\":\"123456\",\n  \"device_id\":\"99be825b-d243-429d-8639-af6137bf847c\",\n  \"device_os\":\"iOS\"\n}"
+						},
+						"url": {
+							"raw": "{{url}}/api/account_master/login",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"account_master",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "ReLogin",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImp0aSI6Ijk1ZThlZDNhYTFmZmM1MTAzYjgzNDZlNGNhYTdhZmYwODQyYzExNDc0YmFlOTBlZjQwZGJhOWU5NjQ2ZWM5Njg0NzliZDY0ZDk2N2E1NTlhIn0.eyJhdWQiOiI2IiwianRpIjoiOTVlOGVkM2FhMWZmYzUxMDNiODM0NmU0Y2FhN2FmZjA4NDJjMTE0NzRiYWU5MGVmNDBkYmE5ZTk2NDZlYzk2ODQ3OWJkNjRkOTY3YTU1OWEiLCJpYXQiOjE1MjgyMDg3MTgsIm5iZiI6MTUyODIwODcxOCwiZXhwIjoxNTU5NzQ0NzE4LCJzdWIiOiI4MCIsInNjb3BlcyI6W119.TFmWT0KqgPxRH-zQ718HzElZmYMEiMYtPvwGzTsomgUJuOprjUnaOWfmd1tm8toKAv-dQBfhCRjaYXrAOuc_MnShkKrfUlGkubtxobcw4rcTcnOpGm5qcVusp6NXOS0QH63ZcE3mZRsX5MIvuV6MZs8eN0BSUB-AQJbmVS098aDk9_21thXaoSO5Mz5M3J2u3RNk8JIRa2eHtVz7NuCHTwH30D3irrzjrRw-KfVXTKUCJBG01Khzoxu-et4jIg2UaWx8ubUI-tY1CeuqZ0R-RGMaPFhowQ08ln_mdsFOQNToe4p-QmOGUQIjTG26hTpDvyFKomuoQxyLH4j-_jxT1XcjzR3-DGt7kTBK56xgbfN57Ob-XgtfP3JFYmSkrptxPgZHtec8CdNL0fRiz57oqsemb73lbCKKNtcLM3vCYOxZrDPBBeHuV9IWtQ_z3_jqjrDEKAy5hdkxWNlszuBJg1ci8ovjUJ24nriFcW4YIAwuzykb6Me3XzeZV0xeC01y-QzwimGgBuC1_tH1EbVSuTffX935Jbmog3IRZn9Z8dYf_xLQ-Ni2v_-SLi8ChhkenSO4wDNsiZwIQ-i61500P8C9ElBEvdhH6_PX55KqYPdU9n__VdlPgght2SMHnC4O5UQOaaUeGfIEoKQ0RZyu6cXU1toKuuRGZKzpxaqC-ww"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"telephone\":\"81396171\",\n  \"country_code\":\"+855\",\n  \"password\":\"123456\",\n  \"device_id\":\"12345678\",\n  \"device_os\":\"iOS\"\n}"
+						},
+						"url": {
+							"raw": "{{url}}/api/account_master/relogin",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"account_master",
+								"relogin"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Logout",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImp0aSI6IjJjMDljNzliNjc0ZjJjMjM0ZTJmYzc0MGUyZTA4ZmQyYWRjYjY5NTRmODhhODNmYWNlZDVlNmM2ZmU0MmI3MTA5N2MwMDMwNDk1YTQ3ZjcwIn0.eyJhdWQiOiI2IiwianRpIjoiMmMwOWM3OWI2NzRmMmMyMzRlMmZjNzQwZTJlMDhmZDJhZGNiNjk1NGY4OGE4M2ZhY2VkNWU2YzZmZTQyYjcxMDk3YzAwMzA0OTVhNDdmNzAiLCJpYXQiOjE1Mzk3NTUyMDAsIm5iZiI6MTUzOTc1NTIwMCwiZXhwIjoxNTcxMjkxMjAwLCJzdWIiOiIyMiIsInNjb3BlcyI6W119.bT9QHHa3Uoc2Wh-qzuK_S06Q6y8nW3HvI-RkbRa0J-ecNGeAx-JqNvQSNC6zIKeEVUqonrYz-649GBjarzhRCPS3zL10dc8yIqdNrOTW-9UEwhKW5Lj5uEZndONBW5Rt7eLu44A4gk686WgPkOOVBkENCC_2WG38RD5d_LUR3EngTS-hl-0RBLuVpgIle08MjAvCOBFJqlHc7nA07JaqSMx6jFsvAjYS4DcOPxff4Rg9_9AIdBxhPxQYaHTo3NyW_5bp3kfsvRQBRNVDISDFfWl996sAt7C_spMQEWnDRBtHa4zvqfYsrhtb3Qb3i5ebyLPmNRE_j2Yvy6kvjjdnIzHm0GyvPICIf4lrltc_TU9iLFMFZD5ffFiOWohnAbgr7saHVIcClflPcxuUUbIlEOCtMIMe0LA77ZR9gYqBIRUY8310PfCbm9fhHD5yuO3P08Bmp89C4hF_kju76kAyMCbtz46qi59CDHvu5sdVz9RzfuqINnLsIYtOpidocRCGyeXV38ivK2OqfCSVZPtxCek59AOdfIrTEKGxEKuqL1RhAvw_H4Y87CQavGozyyEc8k5l2MnxanIYsctEOMsoQVJ-SWXkvyMJcAxcMOL0XnvGledTXqPyuxVjjucGFyfLSfLn5W193vOKe97sqvV50SZ2h3CO7BZ6LwUuC5y3VA0",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"telephone\":\"81397071\",\n  \"country_code\":\"+855\",\n  \"password\":\"123456\"\n}"
+						},
+						"url": {
+							"raw": "{{url}}/api/account_master/logout",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"account_master",
+								"logout"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Confirm Login By Security Key",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImp0aSI6ImM5ZDEwYzUxNjg3ZDkzM2E0YTJlNTUwMzczOGRkYzg4MjZmMzEzMjNkM2U5ZWNiMjlhNDMxOGUzYjg1MTI5Mjg4YmJjNGQzNDUyMWRmZmM3In0.eyJhdWQiOiI2IiwianRpIjoiYzlkMTBjNTE2ODdkOTMzYTRhMmU1NTAzNzM4ZGRjODgyNmYzMTMyM2QzZTllY2IyOWE0MzE4ZTNiODUxMjkyODhiYmM0ZDM0NTIxZGZmYzciLCJpYXQiOjE1MjgyMDg3MDUsIm5iZiI6MTUyODIwODcwNSwiZXhwIjoxNTU5NzQ0NzA1LCJzdWIiOiI4MCIsInNjb3BlcyI6W119.dd0yBcK3hJPCWoBWiKYbwUEAPbSwZxAJQJoPW_oUD49zt13yYROgQ-iszAt181nJIGbbSFtR6BMMG_0o17TiGuml770Fsw-9UBbsGbY0_V7eV66LnXLGtCzcTU82t33t5mPVU7rkyLr1vovbKeCZSkEPFzpCcL7Z-K0VTO9l7RpT-wJWPsa83X2PHzAiFq2D1R1zFZz3LGWFiLwHj9ykK1KBY5p3dcFJ67qeQI5pa8zX9ZQA9lfb_FaZd_no-nb4HjwqwfuM0GwEwvb9rL4jwAeX_TbyQE-YxfdzymXH6bAmLZGsE-DzE7D8781r_M9_QnFmbDx4tTDPvxtcEdHP8MWR3LEZnVGa97BazxeP9dxP432KXs8vgQ9_kCB35-IjtMJCOYQgms5cbQVauqhn1WT6cqzS8jJKsmqvzSix_W8X7ZB4F6Bow0sre3f5OurewaaiLCwHnraKMiMPyRsxVeA9iMi95tYkCd4LVFfchn65MpsXvsVwO-MVKZdXD9xXmYVRkzs3O-lyqVf-XjytuIGDs-M3O3oUINpVo6YPofNzKT9cIHO68uU74f2vsAc64gS9-9XhZukHJPmxrYw27q7kbS-3gZLuOSViwpXElBNbVcvY0PAVyVT6MBrpTXssesKOj82AQcB4z5ofV68-McOq3d7YofE5JeaHjI24V1U"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"PID\":\"DLUyc4VN5gdK2M4Hf5ZlH7dmEoO2DcowALRhzTrf\",\n  \"security_key\":\"123456\"\n}"
+						},
+						"url": {
+							"raw": "{{url}}/api/account/confirm_security_key",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"account",
+								"confirm_security_key"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Register",
+			"item": [
+				{
+					"name": "Confirm Register",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"security_key\":\"1234\",\n  \"first_name\":\"sineth\",\n  \"last_name\":\"lim12\",\n  \"country_code\":\"+855\",\n  \"email\":\"\",\n  \"telephone_1\":\"1675992712\",\n  \"password\":\"123456\",\n  \"confirm_password\":\"123456\",\n}"
+						},
+						"url": {
+							"raw": "{{url}}/api/account_master/confirm_register",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"account_master",
+								"confirm_register"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "UserRegister",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"first_name\":\"muyly12\",\n  \"last_name\":\"lim12\",\n  \"country_code\":\"+855\",\n  \"email\":\"\",\n  \"telephone_1\":\"8139617112\",\n  \"password\":\"123456\",\n  \"confirm_password\":\"123456\",\n  \"device_id\":\"12345678\",\n  \"device_os\":\"iOS\"\n}"
+						},
+						"url": {
+							"raw": "{{url}}/api/account_master/register",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"account_master",
+								"register"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Account",
+			"item": [
+				{
+					"name": "Get All Transaction Account",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImp0aSI6IjE3MzVkNmFjZmYzYjdmMDA1YmM5M2Q4YjI3YWNkZWE4NTMwYTI0NmJmYWNhNmM0NjAyMzc4YTVjMDY1NGY4Zjk2MzFhYTBhYjhkM2U2YWVjIn0.eyJhdWQiOiI2IiwianRpIjoiMTczNWQ2YWNmZjNiN2YwMDViYzkzZDhiMjdhY2RlYTg1MzBhMjQ2YmZhY2E2YzQ2MDIzNzhhNWMwNjU0ZjhmOTYzMWFhMGFiOGQzZTZhZWMiLCJpYXQiOjE1Mzk0OTI0ODYsIm5iZiI6MTUzOTQ5MjQ4NiwiZXhwIjoxNTcxMDI4NDg2LCJzdWIiOiIyNCIsInNjb3BlcyI6W119.gsQcVMJhRVwFNrsNp88gNsAa8rUwbobvTOOVL5P05_LrosVCfLcfwwEDbjO1WYGy9ORegQSJ2TUQng4LLDC1GQXCNP9GZ7pzzadCEPqi53GI0zmcijdFzWq_QG3EltuM3DFZk-0BLYOrnHUq-d1UniPXQm6msS9nj1EU7FgkHhvSjSPFZeXAd94eJwlFxRGPNW5jzQoNl6hpL_g3MHzxlg6cBpBUAhbxUnY7sMkXuLpnz2iq_aG-kiLVhkW9vElTlMzeOLBv2CZPeHEzmojTCRODCqaBgXy3Elp64IsI5QTpLpYZ-yZRBBXW1YbvdiPgjLqXr2c2MFVBw94-swvvmGv8oGziZ65IfT6yv4xwdBmSChsU6qk9EMgnilmUilRC6Cga1Baf2nm4eFoNJCcVaX8S3hgT0r3qKW_Zyz5c9MJHfacuhv64e_ULl-aibFzat2D1NeJZcizu0A5iUESStM9xuSLqbpf3gZeqPAKT1VMOa0_NQ6uhNosOu_l8xZ-vvmAoC4D-IW7EN9yKlIVk48P2JPT5KdTGNJEH-gk41oDTTbtmHLjXVD7cm51k-zW_9V1uocdtBLlzWzsTn3fl6guajEudxUT34bPjHdYzIkizuTOvqzqoaOUGsgowZVid2zTGAJlfuuxXm8UA1sBSJUK-06hs6KpHsLCx7ZhgJ80"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{url}}/api/get_account_transaction",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"get_account_transaction"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Account",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImp0aSI6IjVjMjI2NmFhNmMwMDJmYzc1YWZiMWY3NGI0ODBhZDFlMTQyMzUzYWE0ZTI1NGFkZTAzOTQ5Y2M1NDI2ZWMwNmM1MjJmOWRjYmQzNWIzYzY4In0.eyJhdWQiOiI2IiwianRpIjoiNWMyMjY2YWE2YzAwMmZjNzVhZmIxZjc0YjQ4MGFkMWUxNDIzNTNhYTRlMjU0YWRlMDM5NDljYzU0MjZlYzA2YzUyMmY5ZGNiZDM1YjNjNjgiLCJpYXQiOjE1Mzk3NTYwMzYsIm5iZiI6MTUzOTc1NjAzNiwiZXhwIjoxNTcxMjkyMDM2LCJzdWIiOiIyMiIsInNjb3BlcyI6W119.CYU8G_g9YUvrn6E6b6AoUHPs7onKsUTLuiR1LAEKJHXslAfhGMT9Y58QWJ6u1Dv2m3Ov1ll8MgqBN8ATXInjcAYZvUwdrilf6bOF1g8BSNiavYeIsGXezk_whMh8-eH0-j2FlYjieo-7NXF2U3CLiLHiAePg3SDiqpgZxeIFyRsHJNStVDEjSX5Ie2VtS-RPtSV_c1VhJwRFELGtk9VZu13nNXMaSXIH8UFftKN2q9B4Kt76XTjzezWpH_N1VnlEGvVccfAI5Jkr3i84JyfoffybXy3FSX0SEI6EQLpl4xnhX_eSixGU1Hl2sPusT0V7z9XqmqjYJRt2UUrRhYuFLqW6p2mpoX2c-f2mlaBlZOSaEaEoMO73jG_CvaSRxi2l3Yi7q4L6F8b2iDwi6eprk0hCIy61_xIJL28smAbtLfoJhkTY1YNPOWP47dkBOR4ADcATZmregz4sBzwidsakeq0q8Iaz5L0YoOc47o6nNu2Xtsp_ELTnIDntydLCChgUbJ9PbW8fCHaK0eYet7K0WpTqh8B7MWxenxzXKYoYFDID6LvXXDI4F5cgdT0_1sHjOP0QiRw1rO8VqfzcNhtSqIF4sGR5BFBSf5ySFrXFSViQlnWqlJ2v3Sv6RyqeHt5WhZAK4N10m6e3gCFLBAfqHup1N4XTmJcCGOgTQVKUkSw",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImp0aSI6Ijg4MGNkNWM0YzkyMDhiNDBhMTdmNDg1MzRkNzVkNzFlOTM2MWU4MDE3NTUxNmE0MjE2Y2I0ZDY5MTU5NmMzYjFiN2Y4MDlmOTY3NzBkZWZmIn0.eyJhdWQiOiI2IiwianRpIjoiODgwY2Q1YzRjOTIwOGI0MGExN2Y0ODUzNGQ3NWQ3MWU5MzYxZTgwMTc1NTE2YTQyMTZjYjRkNjkxNTk2YzNiMWI3ZjgwOWY5Njc3MGRlZmYiLCJpYXQiOjE1Mzk0MzcyMDcsIm5iZiI6MTUzOTQzNzIwNywiZXhwIjoxNTcwOTczMjA3LCJzdWIiOiIyMiIsInNjb3BlcyI6W119.GPJVFUAZkDw26vg05ldAWSyflZUeIrf_34S2Y0aiTHJMAkpuUKwwUO2t9qvQEunp1GH4dgek5JyzZMm4TZ185eLVwO5Z9UO4BA_oT13r0dLFtigm9JFggFlPzkBGpuF6qtJD7BW19Ka2PyHWOLnbfC3oWUK2p1nbXjOv6DYRyAIYaTUIh4bPJRyktGz9kcbyQvmlcmI3lwi2HvrkpuXdNAAe6ZXL0ICKbwjZ6mOxvvcbsWO6AbUgkhwk1HADFkRitPTNjeOUqTe_h_MXf4298vOKgMAkqlTCrjt7FPq7zuKMuk1Pg7YIAt7KKtt4M1g54fECjWnzaPOE1PJzktY3cAUTBT1cSVHkLcSGd413azjvTLaZyzy18iJFu7IC4KKJ_uO6MHWFbgqQF2NXNBOlZd8gZXc3c0GfM7azoVufyJKkzEmqO1a4ywLLyq45tHfmXBWVfmqHod9zUp80hcErE8Y4yFK5cvYOR2ZcDMxBO8Z8cs8y1p0ODbS8RAzZP0Sj9YVhlaclH-7fQv12D4sbwsenVA087CaTf-9guoGk1a6ttmaoL4KSgxELf0zUy0L0FvfdKGZCPz_VXErUyS3S-Xq4qKS7zaWX_pZ_ilgLZfmG3oHgGwkSh-5UfTSYBwGCUOce5Yq3jF8sLU1vST5MgHJ0T8cXuFnys6I34OW1GBE"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{url}}/api/getMasterAccount",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"getMasterAccount"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Account",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "DeviceID",
+								"value": "DLUyc4VN5gdK2M4Hf5ZlH7dmEoO2DcowALRhzTrf"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"telephone\":\"+85581397071\"\n}"
+						},
+						"url": {
+							"raw": "{{url}}/api/del_account",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"del_account"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Transaction by Account id",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImp0aSI6IjEzZWUwMjEzOTc3NjRiODNlNDI3MjI0MGIzMDM2ZmUwOTNkNDM1MmI5YTRjNTI4ZWIwZDQ4MGU3NDlhYjYzY2RjZmFmNjJhYmMxZmYyZDlmIn0.eyJhdWQiOiI2IiwianRpIjoiMTNlZTAyMTM5Nzc2NGI4M2U0MjcyMjQwYjMwMzZmZTA5M2Q0MzUyYjlhNGM1MjhlYjBkNDgwZTc0OWFiNjNjZGNmYWY2MmFiYzFmZjJkOWYiLCJpYXQiOjE1Mzk0OTM4OTcsIm5iZiI6MTUzOTQ5Mzg5NywiZXhwIjoxNTcxMDI5ODk3LCJzdWIiOiIyMiIsInNjb3BlcyI6W119.NtdtnuTw7Yl2m8BJ3egqhR5fNQVLSrLwrzXHvf-60hSSJcL4Uku_KFr0f0ABDsPHChoGVA1EXDRy8QcuaIcqaikFUFGug401T05dIEEGAzMrR_UE6LlZEfzUbR3r8FB_oUYHtjJTlr7VTYR4ew5mBTuySNABkp_8GeClFONis92rs0kZiF7H0rRYV6Fqg38bfuaiqRkP6qcOpxfmv79DJiPMjTvCyi_ivT7x44PAmkEjHd8jerV1yII-cEldzzhNhrQAqR0Ho8sRyETLbaX_H9UnJnDEuchOkCSmAXO-QzHewQ28qhDuKcnY9QXEGza-_MxCXfr3aWqcXDgPRMY8HlzRvDb6yOunDAYzk1n7-2UrXizys8RaIbxI42npqsbTFGgcKjl0y-bZjs1VsTxCg3_45amhurxzUsEBKBhjkdnEt-LSGXdlch_kT9r5gsYoAyjE1SX5NxgEzRYQjpcZ3pXDfj4KeS_pFimIyWLaWPjnpwnWVOLGbG8UEMgQA3y2LXgVe1OeXHZ-yK1lrxRY4xKqeaifH_hnS957zx_VeIPmc0Y37z3B-qUPdmR2tvxBhsjlj5H4zUKGTPmUMIKEFHMti264g_7kzx7FXdDSPoRnMIZIBYf9Dx-MOpQmtm_gX4rWGInj5uRYxv4MygguiYsewTjaTFfNv3D92lxFRU4"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{url}}/api/get_transaction_by_accountId?account_id=85",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"get_transaction_by_accountId"
+							],
+							"query": [
+								{
+									"key": "account_id",
+									"value": "85"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Send Money",
+			"item": [
+				{
+					"name": "Confirm SendMoney",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImp0aSI6ImI1OWE2NzBjOWYxZWMwYjAzNjRlNjM0Y2MyMmMxOWNmZmRhMWM4ZmVkNDA0ZDIxMDAxNDNiYjlmNDY2MTYwZWQ1ZTIyZjc2N2M2ZjIyNTdhIn0.eyJhdWQiOiI2IiwianRpIjoiYjU5YTY3MGM5ZjFlYzBiMDM2NGU2MzRjYzIyYzE5Y2ZmZGExYzhmZWQ0MDRkMjEwMDE0M2JiOWY0NjYxNjBlZDVlMjJmNzY3YzZmMjI1N2EiLCJpYXQiOjE1Mzk0OTYwNTcsIm5iZiI6MTUzOTQ5NjA1NywiZXhwIjoxNTcxMDMyMDU3LCJzdWIiOiIyNCIsInNjb3BlcyI6W119.OnondXuTM1a8TS2fQrWO03cQhLzP59Mu_VQ-ljZyfHcjEEV2Rs8uuA3XxJNzzwkmIH7OC4vtkEbSRoA6pyjasozqTc9zokXPeteie8B3CVfMydHgHtHIf5hBilq-f2wx2cRSqhrxpyScSwFdmjVEjcSgnuvxocP5jakG_CCB_q9UdjU935yYjw8y-v0OUlhSKbqlhOLqzZ1Lga3NONIs2ma13eIBWNIXa5Pge9DcoOnBArMgFcaPNcdH-kKaPNKeEJJRhOKlNw80KIiNRgjDU9wYusmG_rDUr-kFCEnxithKKD5m234gJOyplmZxnXYu_XjelSXnGZWu8AxAeHt63NKVorFTtVxgWa21IfjTd5J_ZYlY5kg3jmSmcIU5kHYhucKgj-PLmSnRfFczgomwQMX81-Gu01fA3LOGKEzDE1RoB_koVhZ9qdieoYYVXDSd9VrRZf3PToxuI72M9SNiYmpTJP363tZWThAH4C_4v8xXAicFqt1oclrfQ2NdueXFmQn1W7BlILJe9RgRTGgEwoCZWmTNg1qJhnKx6fS-9czIXyzgZHKgWddUrGIeMwouC949Y4Ey2tWp5kqjovZWlOrwgIVv-W04tYY1mgBsr_Tq-eLmMeyU4tRrwtJ6BOGXJ7Wh9aNP9cNwYOsMYg8wyID1pxHfzFy_cSCN5F7FLIY",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"account_no\":\"41846477\",\n\t\"security_code\":\"123456\",\n\t\"delivery_method_id\":\"1\",\n\t\"sending_currency\":1,\n\t\"sending_amount\":\"12.34\",\n\t\"receiving_currency\":3,\n\t\"receiving_contact\":\"01822222222\",\n\t\"receiving_name\":\"Meng Sopheak\",\n\t\"receiving_date\":\"2018-02-02\",\n\t\"send_to_merchant_account_no\":\"39383\",\n\t\"remark\":\"Send money to Mr.Sopheak During this process\"\n}"
+						},
+						"url": {
+							"raw": "{{url}}/api/confirm_send_money",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"confirm_send_money"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "SendMoney",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImp0aSI6IjYxZDFmN2MxZWJlZjk5OGE1NzBmN2UzOWM2MzFhYTE4MTI2MmFkOWI2MTQ2MWE2NTk2ZDg4YzQ2YjE4NTU2ODhhN2VlODE0MTk1NmE4NDY4In0.eyJhdWQiOiI2IiwianRpIjoiNjFkMWY3YzFlYmVmOTk4YTU3MGY3ZTM5YzYzMWFhMTgxMjYyYWQ5YjYxNDYxYTY1OTZkODhjNDZiMTg1NTY4OGE3ZWU4MTQxOTU2YTg0NjgiLCJpYXQiOjE1Mzk0MzY5NzUsIm5iZiI6MTUzOTQzNjk3NSwiZXhwIjoxNTcwOTcyOTc1LCJzdWIiOiIyMiIsInNjb3BlcyI6W119.PrDOwRDqInvd6WKFWWdNfdDmbLkctUfet8gYxGLx0nP970nOFbTBA2jOsTcmVo-dnXFoERuDq3BUpSNa7JQEOzM1pZW525vrmgG5-_vEbHBgoNbFKWPz7OxfNaJQ-9IHpVapJ2x5MgoCsJrZ5Gy5kyaQLii9KUPhGpGMh5SVKZcOljIpbsc1MVXvxykHYOCmBuCu0zwySuWGo2sbszm_glQpcit1dnZaipDbJ0rl3yeCTef_XU4sQbcDuslIXQhPRfWSPJNKv0Ql4XyLSAYohK91tf16P-9f1FJWXTZ8xH2CM0hGm1ckZwvefcxxI-op-mCMds0q6s6DKUFrOxprItqzYesyzOet6zTKf91-sR-4yk3EN6hMCK1c2RVXu4RB6BF4mqMmwW-oGnvSltXacris1Fn2tg2mipv0jhWp90gToSaxj1rDDF3oal89smoqvVDtLGFWy9TeAS24qkzcsmS_-bmVxffvnpjL1nVwS9BO4E6vhcxb8cKjiz1tjOOxhamRwiyOWZVGbORP6hs6NT5P_XOpsiIqbkvudqkvnAIMCSrt9s1DvCe_Maes5K0F1qeJO3AvvRV_tQYsIoLbW_XG3CSzGR8GjLUrV2d_bZrDXfEG7V3tkc91YsyrZQBffcR2w96i95_u73_ppAci8XIi2ZZ_jD_iI4ynPbtOjNY"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"account_no\":\"44123123\",\n  \"delivery_method_id\":\"1\",\n  \"sending_currency\":1,\n  \"sending_amount\":\"20\",\n  \"receiving_currency\":\"3\",\n  \"receiving_contact\":\"01822222222\",\n  \"receiving_name\":\"Meng Sopheak\",\n  \"receiving_date\":\"2018-02-02\",\n  \"send_to_merchant_account_no\":\"40078128\",\n  \"remark\":\"Send money to Mr.Sopheak During this process\"\n}"
+						},
+						"url": {
+							"raw": "{{url}}/api/send_money",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"send_money"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Voucher",
+			"item": [
+				{
+					"name": "Get Vouchers By Country",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImp0aSI6IjE2NDU4OTVjMTdhM2FiMDgyMTZlZDQ0N2I1OGE1ZGVmM2MyNzU1MmRmMjc5Y2MxYmZiZTNlOWVjMTYxM2QxYjE1ZTc3MGQwOWRkMjFjNzI5In0.eyJhdWQiOiI2IiwianRpIjoiMTY0NTg5NWMxN2EzYWIwODIxNmVkNDQ3YjU4YTVkZWYzYzI3NTUyZGYyNzljYzFiZmJlM2U5ZWMxNjEzZDFiMTVlNzcwZDA5ZGQyMWM3MjkiLCJpYXQiOjE1Mzk3Nzg2NTIsIm5iZiI6MTUzOTc3ODY1MiwiZXhwIjoxNTcxMzE0NjUyLCJzdWIiOiIyMyIsInNjb3BlcyI6W119.ktHtK2TfG4W60G5r_vaMemJ0tOu1LXvjP0X56Yt8Lz4OfiTTDc1WQ1wK4GUH6zC1Gv-7uWJWp-4w6DtZHkcRb1WIw4rlMuLLKW4ilgAN6zOeSd27KTYkULiWF9cu7TwSGtYlIERaDjMSzwvEZlIJzcz31Y4-aC4oV0kuh3gvFOpikCTHBzF32DintjRLqlFDdR7bUVq3pfBsYeZoz1XenqKsxRhVMtLOqmDtKh8WKNyUUg0FI1hA8ZBfVdnJhUmgiL4PaK0DpRbilO8HeMZyJErlyTgW7tqBSlCiv7Io_10un5mXSKDNxpBrhSOG0GIK3TZ-Nle1FKOjErCavZKTeCK6bWpUpPbA05EFcSW14yy5kYEZAXchfi48OpXYTmKoDPN_K2UPGrOLErg8OfhZ_5p0mB0vYK0NgeZTpVfqvSFFFMS0arXbd_ZpvsXiKUNZXe9rpHUtibz5uCbzxH4_DPJPsE1m_s4URaQ0dOs3f-e8_QjMmIJ6uy5c5zWbuW-SE1kJFO2AkD16vZ3YOOE2VXkbtpCwATrWiabVafhP6YhE0OhiyaOE0tzzvD0YwNjFxxXKjH1ebY27yy2dNslduulgrx6Ur2Kqs3TmvThTYTNigrcwl49_p3A4i6nDb-gZb6Az9ppRwypCcq0dQN_Pajou7Hrbsk1dbp_Up6_N8B0",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{url}}/api/get_voucher",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"get_voucher"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Amount Top Up",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImp0aSI6IjE2NDU4OTVjMTdhM2FiMDgyMTZlZDQ0N2I1OGE1ZGVmM2MyNzU1MmRmMjc5Y2MxYmZiZTNlOWVjMTYxM2QxYjE1ZTc3MGQwOWRkMjFjNzI5In0.eyJhdWQiOiI2IiwianRpIjoiMTY0NTg5NWMxN2EzYWIwODIxNmVkNDQ3YjU4YTVkZWYzYzI3NTUyZGYyNzljYzFiZmJlM2U5ZWMxNjEzZDFiMTVlNzcwZDA5ZGQyMWM3MjkiLCJpYXQiOjE1Mzk3Nzg2NTIsIm5iZiI6MTUzOTc3ODY1MiwiZXhwIjoxNTcxMzE0NjUyLCJzdWIiOiIyMyIsInNjb3BlcyI6W119.ktHtK2TfG4W60G5r_vaMemJ0tOu1LXvjP0X56Yt8Lz4OfiTTDc1WQ1wK4GUH6zC1Gv-7uWJWp-4w6DtZHkcRb1WIw4rlMuLLKW4ilgAN6zOeSd27KTYkULiWF9cu7TwSGtYlIERaDjMSzwvEZlIJzcz31Y4-aC4oV0kuh3gvFOpikCTHBzF32DintjRLqlFDdR7bUVq3pfBsYeZoz1XenqKsxRhVMtLOqmDtKh8WKNyUUg0FI1hA8ZBfVdnJhUmgiL4PaK0DpRbilO8HeMZyJErlyTgW7tqBSlCiv7Io_10un5mXSKDNxpBrhSOG0GIK3TZ-Nle1FKOjErCavZKTeCK6bWpUpPbA05EFcSW14yy5kYEZAXchfi48OpXYTmKoDPN_K2UPGrOLErg8OfhZ_5p0mB0vYK0NgeZTpVfqvSFFFMS0arXbd_ZpvsXiKUNZXe9rpHUtibz5uCbzxH4_DPJPsE1m_s4URaQ0dOs3f-e8_QjMmIJ6uy5c5zWbuW-SE1kJFO2AkD16vZ3YOOE2VXkbtpCwATrWiabVafhP6YhE0OhiyaOE0tzzvD0YwNjFxxXKjH1ebY27yy2dNslduulgrx6Ur2Kqs3TmvThTYTNigrcwl49_p3A4i6nDb-gZb6Az9ppRwypCcq0dQN_Pajou7Hrbsk1dbp_Up6_N8B0",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImp0aSI6IjI5OWE3N2NlODQ1ZDZjY2FkNWNjY2UwMDkxN2JmNTEyYjE5YmEwZWY0NDBlMWFhZmEzNGNiMzA0MTgzMjMzNDViYWZiMTQwODc3ZmY1NjRmIn0.eyJhdWQiOiI2IiwianRpIjoiMjk5YTc3Y2U4NDVkNmNjYWQ1Y2NjZTAwOTE3YmY1MTJiMTliYTBlZjQ0MGUxYWFmYTM0Y2IzMDQxODMyMzM0NWJhZmIxNDA4NzdmZjU2NGYiLCJpYXQiOjE1MTkzMTIwNTksIm5iZiI6MTUxOTMxMjA1OSwiZXhwIjoxNTUwODQ4MDU5LCJzdWIiOiIzNSIsInNjb3BlcyI6W119.MJN0QLfZVdCnugl17iM8Fq3dF2uQ8eiwcCyJIVOayn0l2TbWDTNyupF3h_wtu1yzE60rysim0Y0HBjo5W3gq8KAjJ7JcUDhU9zX-U6r0PI6wPmkmpAwvyeLxPrB6mPeShYQQJWfpOCSEjhCh8czFk0QMzbc5wD6sllev51hKl0r216dE3tTmwcN4qmKx598sBMTEuSxxaP3qgsQf1Bx3RmWB2zuks0c2XJUzrw9KWSbjzacEZboopd5mbZa8GILq4luNiVN2Xltv6PHIE_cmWrCjMEoubmoqIkN2DnVnXoAh62bq6D758ifstla1s3h3AKrd4gvVAjWqBEBxHEDS8a0vycyCX-OnuC05Boz_xK0nez-iItvFTJAlnkQMArCdrf6T1CfPnKZFH-Wx9cJI5loKisOE5dhJn8zP-8hg0roLXex2bGpi9eDG6wq0D5FzbEKN6upmo9TW56vi9se_U1WAyLiHGV7tnRRw-CzJYhk4BfJBKmVL-99QA8QDskxo2CkYIF9CLliqfwIjmAK5UW-xkGEt3ZKQ7FgIgweHeOfXZBWWTPYMyAUYdScXv7HCv2IXwQVfmk_yG8B6BsomE6VDna5fmiCovqV1Qt_VSySZCabi9z8__Cbqhhdjk3-luwG6KmPWEWv_qKbgQxa5Z-SjlP6vs_8RfFAifmdlAHE"
+							},
+							{
+								"key": "DeviceID",
+								"value": "DLUyc4VN5gdK2M4Hf5ZlH7dmEoO2DcowALRhzTrf"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{url}}/api/get_amount_top_up?voucher_id=1",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"get_amount_top_up"
+							],
+							"query": [
+								{
+									"key": "voucher_id",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Buy Voucher",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImp0aSI6Ijg1NDE2MTE0Y2MwZGEwNTk0NmUxMTAzYjYyOTUzMjljOGVlODhjNGYyNDA5OGVhODBiYzQ0MDczMjgzODBhZDRmYjAxODVlMjUwZDJhMjEzIn0.eyJhdWQiOiI2IiwianRpIjoiODU0MTYxMTRjYzBkYTA1OTQ2ZTExMDNiNjI5NTMyOWM4ZWU4OGM0ZjI0MDk4ZWE4MGJjNDQwNzMyODM4MGFkNGZiMDE4NWUyNTBkMmEyMTMiLCJpYXQiOjE1MjgyNTk3NTUsIm5iZiI6MTUyODI1OTc1NSwiZXhwIjoxNTU5Nzk1NzU1LCJzdWIiOiI3OSIsInNjb3BlcyI6W119.P1aqa3xR-7Sy8FhmjfqTZaXnsbiVU5DYx97BfbSODTJzeL0_zAn5rfpwWzvgXqWNfEAFSU8bp-Ft0PNKjEPQTyJkE714t_wcTKbYO6QsXjT77VWsIVqG2DaoBYH2UdXcaPH8WBqB2QPvc9TdxgBwIfUyQAJbtgv2Obo0KmjTbapk034CD7AtWQrkynFlmMW3VzAOSrJjU2aRe4lSFjSP-PjFcxzRp2VFmyuG7HXjCqym5dM8fk3t_sOwld0QPe6kb5HlQYvGaY9JFXSZDtlHkeiaVAu3DODDZbQOAkGf3gxBnfRtl7vUjJxXB8cD4N9X3ukzlTGok2uNrGR2R9618jYSWnanhXaIuOZqDH5tACdPTCQqxY3y2elgkcru5OCjn_PtR7WMsDydy2m_aIXSySXY-KDfDQ-Hcv405wV9GYD3e59PnmmCxX8dCkqgvDumn_o4q3L_LI_ybuqa2ri-H0GHcBMcEEQSMYlFNFUW3zgNKK4UqhF1i4mY_-O0USrffnKUWHZXHxROFVLUz3oSuzvUAXjn_uz-owt56rvleYIIyvSTfq-x1m5BowP9O30uPkZyq0eVN3twEX1p3rbTjvPxM8vuJiDwJRg54caeUegjffRfs9k32hcrgysXy7i1L4gptoBCH1vLQNaOLxOTjLl3jnEnRFcNTaz7I00X9fI"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"from_account_no\":\"10998612\",\n  \"amount_top_up\":\"2\",\n  \"country\":\"USA\",\n  \"pay_to_voucher\":\"Smart\",\n  \"transfer_date\":\"2018-02-02\",\n  \"telephone\":\"08139881\",\n  \"message\":\"Pay Vocuher to my phone number 08139881\"\n}"
+						},
+						"url": {
+							"raw": "{{url}}/api/buy_voucher",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"buy_voucher"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Confirm Buy Voucher",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImp0aSI6IjYxZDFmN2MxZWJlZjk5OGE1NzBmN2UzOWM2MzFhYTE4MTI2MmFkOWI2MTQ2MWE2NTk2ZDg4YzQ2YjE4NTU2ODhhN2VlODE0MTk1NmE4NDY4In0.eyJhdWQiOiI2IiwianRpIjoiNjFkMWY3YzFlYmVmOTk4YTU3MGY3ZTM5YzYzMWFhMTgxMjYyYWQ5YjYxNDYxYTY1OTZkODhjNDZiMTg1NTY4OGE3ZWU4MTQxOTU2YTg0NjgiLCJpYXQiOjE1Mzk0MzY5NzUsIm5iZiI6MTUzOTQzNjk3NSwiZXhwIjoxNTcwOTcyOTc1LCJzdWIiOiIyMiIsInNjb3BlcyI6W119.PrDOwRDqInvd6WKFWWdNfdDmbLkctUfet8gYxGLx0nP970nOFbTBA2jOsTcmVo-dnXFoERuDq3BUpSNa7JQEOzM1pZW525vrmgG5-_vEbHBgoNbFKWPz7OxfNaJQ-9IHpVapJ2x5MgoCsJrZ5Gy5kyaQLii9KUPhGpGMh5SVKZcOljIpbsc1MVXvxykHYOCmBuCu0zwySuWGo2sbszm_glQpcit1dnZaipDbJ0rl3yeCTef_XU4sQbcDuslIXQhPRfWSPJNKv0Ql4XyLSAYohK91tf16P-9f1FJWXTZ8xH2CM0hGm1ckZwvefcxxI-op-mCMds0q6s6DKUFrOxprItqzYesyzOet6zTKf91-sR-4yk3EN6hMCK1c2RVXu4RB6BF4mqMmwW-oGnvSltXacris1Fn2tg2mipv0jhWp90gToSaxj1rDDF3oal89smoqvVDtLGFWy9TeAS24qkzcsmS_-bmVxffvnpjL1nVwS9BO4E6vhcxb8cKjiz1tjOOxhamRwiyOWZVGbORP6hs6NT5P_XOpsiIqbkvudqkvnAIMCSrt9s1DvCe_Maes5K0F1qeJO3AvvRV_tQYsIoLbW_XG3CSzGR8GjLUrV2d_bZrDXfEG7V3tkc91YsyrZQBffcR2w96i95_u73_ppAci8XIi2ZZ_jD_iI4ynPbtOjNY"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"security_key\": \"123456\",\n  \"from_account_no\":\"44123123\",\n  \"amount_top_up\":\"2\",\n  \"pay_to_voucher\":\"Smart\",\n  \"transfer_date\":\"2018-02-02\",\n  \"telephone\":\"08139881\",\n  \"message\":\"Pay Vocuher to my phone number 08139881\"\n}"
+						},
+						"url": {
+							"raw": "{{url}}/api/confirm_buy_voucher",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"confirm_buy_voucher"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "VoIP",
+			"item": [
+				{
+					"name": "Buy Voip",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImp0aSI6Ijg1NDE2MTE0Y2MwZGEwNTk0NmUxMTAzYjYyOTUzMjljOGVlODhjNGYyNDA5OGVhODBiYzQ0MDczMjgzODBhZDRmYjAxODVlMjUwZDJhMjEzIn0.eyJhdWQiOiI2IiwianRpIjoiODU0MTYxMTRjYzBkYTA1OTQ2ZTExMDNiNjI5NTMyOWM4ZWU4OGM0ZjI0MDk4ZWE4MGJjNDQwNzMyODM4MGFkNGZiMDE4NWUyNTBkMmEyMTMiLCJpYXQiOjE1MjgyNTk3NTUsIm5iZiI6MTUyODI1OTc1NSwiZXhwIjoxNTU5Nzk1NzU1LCJzdWIiOiI3OSIsInNjb3BlcyI6W119.P1aqa3xR-7Sy8FhmjfqTZaXnsbiVU5DYx97BfbSODTJzeL0_zAn5rfpwWzvgXqWNfEAFSU8bp-Ft0PNKjEPQTyJkE714t_wcTKbYO6QsXjT77VWsIVqG2DaoBYH2UdXcaPH8WBqB2QPvc9TdxgBwIfUyQAJbtgv2Obo0KmjTbapk034CD7AtWQrkynFlmMW3VzAOSrJjU2aRe4lSFjSP-PjFcxzRp2VFmyuG7HXjCqym5dM8fk3t_sOwld0QPe6kb5HlQYvGaY9JFXSZDtlHkeiaVAu3DODDZbQOAkGf3gxBnfRtl7vUjJxXB8cD4N9X3ukzlTGok2uNrGR2R9618jYSWnanhXaIuOZqDH5tACdPTCQqxY3y2elgkcru5OCjn_PtR7WMsDydy2m_aIXSySXY-KDfDQ-Hcv405wV9GYD3e59PnmmCxX8dCkqgvDumn_o4q3L_LI_ybuqa2ri-H0GHcBMcEEQSMYlFNFUW3zgNKK4UqhF1i4mY_-O0USrffnKUWHZXHxROFVLUz3oSuzvUAXjn_uz-owt56rvleYIIyvSTfq-x1m5BowP9O30uPkZyq0eVN3twEX1p3rbTjvPxM8vuJiDwJRg54caeUegjffRfs9k32hcrgysXy7i1L4gptoBCH1vLQNaOLxOTjLl3jnEnRFcNTaz7I00X9fI"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"account_no\":\"58397720\",\n  \"voip_account_no\":\"0238423\",\n  \"amount\":\"10\",\n  \"currency_id\":\"1\"\n}"
+						},
+						"url": {
+							"raw": "{{url}}/api/buy_voip",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"buy_voip"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Confirm Buy Voip",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImp0aSI6IjYxZDFmN2MxZWJlZjk5OGE1NzBmN2UzOWM2MzFhYTE4MTI2MmFkOWI2MTQ2MWE2NTk2ZDg4YzQ2YjE4NTU2ODhhN2VlODE0MTk1NmE4NDY4In0.eyJhdWQiOiI2IiwianRpIjoiNjFkMWY3YzFlYmVmOTk4YTU3MGY3ZTM5YzYzMWFhMTgxMjYyYWQ5YjYxNDYxYTY1OTZkODhjNDZiMTg1NTY4OGE3ZWU4MTQxOTU2YTg0NjgiLCJpYXQiOjE1Mzk0MzY5NzUsIm5iZiI6MTUzOTQzNjk3NSwiZXhwIjoxNTcwOTcyOTc1LCJzdWIiOiIyMiIsInNjb3BlcyI6W119.PrDOwRDqInvd6WKFWWdNfdDmbLkctUfet8gYxGLx0nP970nOFbTBA2jOsTcmVo-dnXFoERuDq3BUpSNa7JQEOzM1pZW525vrmgG5-_vEbHBgoNbFKWPz7OxfNaJQ-9IHpVapJ2x5MgoCsJrZ5Gy5kyaQLii9KUPhGpGMh5SVKZcOljIpbsc1MVXvxykHYOCmBuCu0zwySuWGo2sbszm_glQpcit1dnZaipDbJ0rl3yeCTef_XU4sQbcDuslIXQhPRfWSPJNKv0Ql4XyLSAYohK91tf16P-9f1FJWXTZ8xH2CM0hGm1ckZwvefcxxI-op-mCMds0q6s6DKUFrOxprItqzYesyzOet6zTKf91-sR-4yk3EN6hMCK1c2RVXu4RB6BF4mqMmwW-oGnvSltXacris1Fn2tg2mipv0jhWp90gToSaxj1rDDF3oal89smoqvVDtLGFWy9TeAS24qkzcsmS_-bmVxffvnpjL1nVwS9BO4E6vhcxb8cKjiz1tjOOxhamRwiyOWZVGbORP6hs6NT5P_XOpsiIqbkvudqkvnAIMCSrt9s1DvCe_Maes5K0F1qeJO3AvvRV_tQYsIoLbW_XG3CSzGR8GjLUrV2d_bZrDXfEG7V3tkc91YsyrZQBffcR2w96i95_u73_ppAci8XIi2ZZ_jD_iI4ynPbtOjNY"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"security_code\":\"123456\",\n  \"account_no\":\"44123123\",\n  \"voip_account_no\":\"0238423\",\n  \"amount\":\"10\",\n  \"currency_id\":\"1\"\n}"
+						},
+						"url": {
+							"raw": "{{url}}/api/confirm_buy_voip",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"confirm_buy_voip"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "5dc377b2-e489-4c25-a837-c442b8f0e666",
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"id": "890450b8-a7cd-4c38-924a-6db915c99026",
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				}
+			]
+		},
+		{
+			"name": "Transfer Money",
+			"item": [
+				{
+					"name": "TransferMoney",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImp0aSI6IjYxZDFmN2MxZWJlZjk5OGE1NzBmN2UzOWM2MzFhYTE4MTI2MmFkOWI2MTQ2MWE2NTk2ZDg4YzQ2YjE4NTU2ODhhN2VlODE0MTk1NmE4NDY4In0.eyJhdWQiOiI2IiwianRpIjoiNjFkMWY3YzFlYmVmOTk4YTU3MGY3ZTM5YzYzMWFhMTgxMjYyYWQ5YjYxNDYxYTY1OTZkODhjNDZiMTg1NTY4OGE3ZWU4MTQxOTU2YTg0NjgiLCJpYXQiOjE1Mzk0MzY5NzUsIm5iZiI6MTUzOTQzNjk3NSwiZXhwIjoxNTcwOTcyOTc1LCJzdWIiOiIyMiIsInNjb3BlcyI6W119.PrDOwRDqInvd6WKFWWdNfdDmbLkctUfet8gYxGLx0nP970nOFbTBA2jOsTcmVo-dnXFoERuDq3BUpSNa7JQEOzM1pZW525vrmgG5-_vEbHBgoNbFKWPz7OxfNaJQ-9IHpVapJ2x5MgoCsJrZ5Gy5kyaQLii9KUPhGpGMh5SVKZcOljIpbsc1MVXvxykHYOCmBuCu0zwySuWGo2sbszm_glQpcit1dnZaipDbJ0rl3yeCTef_XU4sQbcDuslIXQhPRfWSPJNKv0Ql4XyLSAYohK91tf16P-9f1FJWXTZ8xH2CM0hGm1ckZwvefcxxI-op-mCMds0q6s6DKUFrOxprItqzYesyzOet6zTKf91-sR-4yk3EN6hMCK1c2RVXu4RB6BF4mqMmwW-oGnvSltXacris1Fn2tg2mipv0jhWp90gToSaxj1rDDF3oal89smoqvVDtLGFWy9TeAS24qkzcsmS_-bmVxffvnpjL1nVwS9BO4E6vhcxb8cKjiz1tjOOxhamRwiyOWZVGbORP6hs6NT5P_XOpsiIqbkvudqkvnAIMCSrt9s1DvCe_Maes5K0F1qeJO3AvvRV_tQYsIoLbW_XG3CSzGR8GjLUrV2d_bZrDXfEG7V3tkc91YsyrZQBffcR2w96i95_u73_ppAci8XIi2ZZ_jD_iI4ynPbtOjNY"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"transfer_from_account_no\":\"44123123\",\n  \"transfer_to_account_no\":\"30164461\",\n  \"transfer_amount\":\"10\",\n  \"remark\":\"Remark or comment transfer money to account\"\n}"
+						},
+						"url": {
+							"raw": "{{url}}/api/transfer_money",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"transfer_money"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Confirm Transfer Money",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImp0aSI6IjMxM2RhMjk4NDNjODNmN2ZhNzlhOWU1NDgxOTRhZmJmNjIxNzQxMmE2ZDJkNjM5NWI3MGM1NTk1OTZjMzhiNjM5MmMxYzc2NWMxYjMxNmFkIn0.eyJhdWQiOiI2IiwianRpIjoiMzEzZGEyOTg0M2M4M2Y3ZmE3OWE5ZTU0ODE5NGFmYmY2MjE3NDEyYTZkMmQ2Mzk1YjcwYzU1OTU5NmMzOGI2MzkyYzFjNzY1YzFiMzE2YWQiLCJpYXQiOjE1Mzk0OTIyMzcsIm5iZiI6MTUzOTQ5MjIzNywiZXhwIjoxNTcxMDI4MjM3LCJzdWIiOiIyNCIsInNjb3BlcyI6W119.J3v706WnzjFDry_uUIYvCLYkb0lr3pADRp2UMe3KZ2V7-6T2X63_oc7Z_DbNwmBSV_U4SZSROKsxUqdJrDtqbme5TZom-cQg0ETxlkmAwxIvZ81pwxXj_dAAkQ4Pzk53rx9csq6_4b1ZEgzxUFuDJ9jItcbItaYZFS00IsODu9oqGD1XkVvxECTZNvsAuBu9J-0rivshh9Rm6Wz2RaXhNxy3eWqo6BgFEkAyTAS81wzAez7vb3Fe1mENkp153DxAzOyFe0JZXO1hw3HLhx04G-EVzs4GJgL_g0DhvCZI0TmqMVMoEy43UuZxRczmJ8sWLrl3hW8V9x-toEbB9q3Q1B8CnSk3jrgS9-dDajkh3qwhdl4Bv054T3e4PehDL0GydlY60GMHrzxZR-L83moRyG6gPPaddlYf7mTfOeqrIlepnclrFBaB74cYX01hc02oN0KkGEHLVHEhaOeVT1sQaSOiBCVMvhxP4qnDYbA3VU_ZSsWcFz0WVfmDqpOhHQPQyA2bQ_x08v4Ev5IgBxfqoHUw-r4rQ0rbMk8nr49Y46RHziYv9seW3SjZNpaKzM6l6iPoncliP2wfoTVgkK0K4h3YiMqB7RFPRnJXzXu7TertvCo_wDcbDGxU3wUBtudqEqUYflN21P70jGWIPCMAiJXsW7EVPB7Kw5K8zdpk2KQ"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"security_code\":\"123456\",\n  \"transfer_from_account_no\":\"41846477\",\n  \"transfer_to_account_no\":\"41521287\",\n  \"transfer_amount\":\"10\",\n  \"remark\":\"Remark or comment transfer money to account\"\n}"
+						},
+						"url": {
+							"raw": "{{url}}/api/confirm_transfer_money",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"confirm_transfer_money"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Delivery Method",
+			"item": [
+				{
+					"name": "Get Delivery Method",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{url}}/api/get_delivery_method",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"get_delivery_method"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Delivery Method Type",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{url}}/api/get_delivery_method_type",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"get_delivery_method_type"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Booking",
+			"item": [
+				{
+					"name": "Booking",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImp0aSI6IjYxZDFmN2MxZWJlZjk5OGE1NzBmN2UzOWM2MzFhYTE4MTI2MmFkOWI2MTQ2MWE2NTk2ZDg4YzQ2YjE4NTU2ODhhN2VlODE0MTk1NmE4NDY4In0.eyJhdWQiOiI2IiwianRpIjoiNjFkMWY3YzFlYmVmOTk4YTU3MGY3ZTM5YzYzMWFhMTgxMjYyYWQ5YjYxNDYxYTY1OTZkODhjNDZiMTg1NTY4OGE3ZWU4MTQxOTU2YTg0NjgiLCJpYXQiOjE1Mzk0MzY5NzUsIm5iZiI6MTUzOTQzNjk3NSwiZXhwIjoxNTcwOTcyOTc1LCJzdWIiOiIyMiIsInNjb3BlcyI6W119.PrDOwRDqInvd6WKFWWdNfdDmbLkctUfet8gYxGLx0nP970nOFbTBA2jOsTcmVo-dnXFoERuDq3BUpSNa7JQEOzM1pZW525vrmgG5-_vEbHBgoNbFKWPz7OxfNaJQ-9IHpVapJ2x5MgoCsJrZ5Gy5kyaQLii9KUPhGpGMh5SVKZcOljIpbsc1MVXvxykHYOCmBuCu0zwySuWGo2sbszm_glQpcit1dnZaipDbJ0rl3yeCTef_XU4sQbcDuslIXQhPRfWSPJNKv0Ql4XyLSAYohK91tf16P-9f1FJWXTZ8xH2CM0hGm1ckZwvefcxxI-op-mCMds0q6s6DKUFrOxprItqzYesyzOet6zTKf91-sR-4yk3EN6hMCK1c2RVXu4RB6BF4mqMmwW-oGnvSltXacris1Fn2tg2mipv0jhWp90gToSaxj1rDDF3oal89smoqvVDtLGFWy9TeAS24qkzcsmS_-bmVxffvnpjL1nVwS9BO4E6vhcxb8cKjiz1tjOOxhamRwiyOWZVGbORP6hs6NT5P_XOpsiIqbkvudqkvnAIMCSrt9s1DvCe_Maes5K0F1qeJO3AvvRV_tQYsIoLbW_XG3CSzGR8GjLUrV2d_bZrDXfEG7V3tkc91YsyrZQBffcR2w96i95_u73_ppAci8XIi2ZZ_jD_iI4ynPbtOjNY"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"account_id\":\"85\",\n  \"booking_type\":\"One Way\",\n  \"origin\":\"PHN\",\n  \"destination\":\"SR\",\n  \"booking_date\":\"2018-02-02\",\n  \"fly_date\":\"2018-02-02\",\n  \"fly_time\":\"18:00\",\n  \"return_date\":\"2017-01-01\",\n  \"return_time\":\"12:00\"\n}"
+						},
+						"url": {
+							"raw": "{{url}}/api/booking",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"booking"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Flight Location",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{url}}/api/get_flight_location?country_id=36",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"get_flight_location"
+							],
+							"query": [
+								{
+									"key": "country_id",
+									"value": "36"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Flight Location By Country",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{url}}/api/getFlyLocationBaseCountry?country_id=36",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"getFlyLocationBaseCountry"
+							],
+							"query": [
+								{
+									"key": "country_id",
+									"value": "36"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get BookingType",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{url}}/api/get_booking_type",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"get_booking_type"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Get Exchange Rate Information",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "{{url}}/api/exchange_rate",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"api",
+						"exchange_rate"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Locatioin",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "{{url}}/api/get_location",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"api",
+						"get_location"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Information About",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImp0aSI6IjI5OWE3N2NlODQ1ZDZjY2FkNWNjY2UwMDkxN2JmNTEyYjE5YmEwZWY0NDBlMWFhZmEzNGNiMzA0MTgzMjMzNDViYWZiMTQwODc3ZmY1NjRmIn0.eyJhdWQiOiI2IiwianRpIjoiMjk5YTc3Y2U4NDVkNmNjYWQ1Y2NjZTAwOTE3YmY1MTJiMTliYTBlZjQ0MGUxYWFmYTM0Y2IzMDQxODMyMzM0NWJhZmIxNDA4NzdmZjU2NGYiLCJpYXQiOjE1MTkzMTIwNTksIm5iZiI6MTUxOTMxMjA1OSwiZXhwIjoxNTUwODQ4MDU5LCJzdWIiOiIzNSIsInNjb3BlcyI6W119.MJN0QLfZVdCnugl17iM8Fq3dF2uQ8eiwcCyJIVOayn0l2TbWDTNyupF3h_wtu1yzE60rysim0Y0HBjo5W3gq8KAjJ7JcUDhU9zX-U6r0PI6wPmkmpAwvyeLxPrB6mPeShYQQJWfpOCSEjhCh8czFk0QMzbc5wD6sllev51hKl0r216dE3tTmwcN4qmKx598sBMTEuSxxaP3qgsQf1Bx3RmWB2zuks0c2XJUzrw9KWSbjzacEZboopd5mbZa8GILq4luNiVN2Xltv6PHIE_cmWrCjMEoubmoqIkN2DnVnXoAh62bq6D758ifstla1s3h3AKrd4gvVAjWqBEBxHEDS8a0vycyCX-OnuC05Boz_xK0nez-iItvFTJAlnkQMArCdrf6T1CfPnKZFH-Wx9cJI5loKisOE5dhJn8zP-8hg0roLXex2bGpi9eDG6wq0D5FzbEKN6upmo9TW56vi9se_U1WAyLiHGV7tnRRw-CzJYhk4BfJBKmVL-99QA8QDskxo2CkYIF9CLliqfwIjmAK5UW-xkGEt3ZKQ7FgIgweHeOfXZBWWTPYMyAUYdScXv7HCv2IXwQVfmk_yG8B6BsomE6VDna5fmiCovqV1Qt_VSySZCabi9z8__Cbqhhdjk3-luwG6KmPWEWv_qKbgQxa5Z-SjlP6vs_8RfFAifmdlAHE"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "{{url}}/api/information/about?lang=1",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"api",
+						"information",
+						"about"
+					],
+					"query": [
+						{
+							"key": "lang",
+							"value": "1"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Currency",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "{{url}}/api/get_currency",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"api",
+						"get_currency"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Language",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImp0aSI6IjI5OWE3N2NlODQ1ZDZjY2FkNWNjY2UwMDkxN2JmNTEyYjE5YmEwZWY0NDBlMWFhZmEzNGNiMzA0MTgzMjMzNDViYWZiMTQwODc3ZmY1NjRmIn0.eyJhdWQiOiI2IiwianRpIjoiMjk5YTc3Y2U4NDVkNmNjYWQ1Y2NjZTAwOTE3YmY1MTJiMTliYTBlZjQ0MGUxYWFmYTM0Y2IzMDQxODMyMzM0NWJhZmIxNDA4NzdmZjU2NGYiLCJpYXQiOjE1MTkzMTIwNTksIm5iZiI6MTUxOTMxMjA1OSwiZXhwIjoxNTUwODQ4MDU5LCJzdWIiOiIzNSIsInNjb3BlcyI6W119.MJN0QLfZVdCnugl17iM8Fq3dF2uQ8eiwcCyJIVOayn0l2TbWDTNyupF3h_wtu1yzE60rysim0Y0HBjo5W3gq8KAjJ7JcUDhU9zX-U6r0PI6wPmkmpAwvyeLxPrB6mPeShYQQJWfpOCSEjhCh8czFk0QMzbc5wD6sllev51hKl0r216dE3tTmwcN4qmKx598sBMTEuSxxaP3qgsQf1Bx3RmWB2zuks0c2XJUzrw9KWSbjzacEZboopd5mbZa8GILq4luNiVN2Xltv6PHIE_cmWrCjMEoubmoqIkN2DnVnXoAh62bq6D758ifstla1s3h3AKrd4gvVAjWqBEBxHEDS8a0vycyCX-OnuC05Boz_xK0nez-iItvFTJAlnkQMArCdrf6T1CfPnKZFH-Wx9cJI5loKisOE5dhJn8zP-8hg0roLXex2bGpi9eDG6wq0D5FzbEKN6upmo9TW56vi9se_U1WAyLiHGV7tnRRw-CzJYhk4BfJBKmVL-99QA8QDskxo2CkYIF9CLliqfwIjmAK5UW-xkGEt3ZKQ7FgIgweHeOfXZBWWTPYMyAUYdScXv7HCv2IXwQVfmk_yG8B6BsomE6VDna5fmiCovqV1Qt_VSySZCabi9z8__Cbqhhdjk3-luwG6KmPWEWv_qKbgQxa5Z-SjlP6vs_8RfFAifmdlAHE"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "{{url}}/api/languages",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"api",
+						"languages"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Country",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "{{url}}/api/get_country",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"api",
+						"get_country"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"id": "978c2f30-f629-40e2-a7fe-421d91c8916f",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"id": "2a1fdcd9-efba-4a50-a32a-1425c79e9780",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	]
+}

@@ -1,0 +1,14 @@
+https://bootstrap-vue.js.org/docs/components/table
+
+//### call funciton button to alternative button
+https://stackoverflow.com/questions/33682651/call-a-vue-js-component-method-from-outside-the-component/37521683
+//### Call event from child to parent
+https://jsfiddle.net/tiagomatosweb/vqtnpyzw/
+//### Live Chat
+https://bootsnipp.com/tags/chat
+//### Random image
+https://laracasts.com/discuss/channels/general-discussion/file-upload-with-vue-laravel
+
+### Bootstrap 
+https://bootstrap-vue.js.org/docs/components/table/#complete-example
+https://bootstrap-vue.js.org/docs/components/table

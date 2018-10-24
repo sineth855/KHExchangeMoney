@@ -40,7 +40,6 @@
                 );
                 $i++;
             }
-            // dd($AccountCredits);
             return response()->json(['success'=>true,'message'=>'Success','data'=>$data,'total'=>count($data)], 200);
         }
         public function store(Request $request)

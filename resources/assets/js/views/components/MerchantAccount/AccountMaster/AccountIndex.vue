@@ -30,7 +30,8 @@
         :account_no="account_no"
         :flag_account="flag_account"
         :account_master_id="account_master_id"
-        :formData="formData">
+        :formData="formData"
+        v-on:event_account="eventAccount">
       </modal-account-form>
 
       <!--<b-card header="<i class='fa fa-align-justify'></i> List Data <span class='pull-right'><a href='/#/merchant-account/account-master' class='btn btn-default btn-sm'><i class='icon-reply'></i> Back List</a> <button onclick='logIn()' class='btn btn-primary btn-sm'><i class='icon-plus'></i> Add</button></span>">-->
@@ -150,13 +151,19 @@
     },
     methods:{
       eventChild: function(accou) {
-        this.viewAccountDetail(accou)
+        this.viewAccountDetail(accou);
+        // alert("I love you")
+          // alert("here is event from child")
+          // console.log('Event from child component emitted', id)
+      },
+      eventAccount: function() {
+        this.getData();
         // alert("I love you")
           // alert("here is event from child")
           // console.log('Event from child component emitted', id)
       },
       eventParent: function() {
-          this.$emit('event_parent', 1)
+          this.$emit('event_parent', 1);
       },
       onBackList(){
         Flash.setLoading(true)

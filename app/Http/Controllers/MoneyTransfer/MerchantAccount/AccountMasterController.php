@@ -210,7 +210,7 @@ class AccountMasterController extends Controller
                     'account_no' => $input['account_no'],
                     'currency_id' => $input['currency_id'],
                     'is_default' => 0,
-                    'is_active' => 0,
+                    'is_active' => 1,
                     'created_by' => Auth::user()->id,
                     'modified_by' => Auth::user()->id,
                     'date_added' => date('Y-m-d'),

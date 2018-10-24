@@ -93,9 +93,9 @@
                     <b-form-checkbox v-model="formData.is_active"> Is Active?</b-form-checkbox>
                 </b-form-fieldset>
 
-                <b-form-fieldset>
+                <!--<b-form-fieldset>
                     <b-form-checkbox v-model="formData.status"> Status</b-form-checkbox>
-                </b-form-fieldset>
+                </b-form-fieldset>-->
 
                 <div slot="modal-footer" class="w-100">
                     <span class="pull-right">
@@ -194,6 +194,10 @@
             child_method(){
                 this.successModal = true
             },
+            eventAccount() {
+                // alert("testng")
+                this.$emit('event_account')
+            },
             onSubmit (evt) {
                 evt.preventDefault();
                 if(this.flag_account==1){
@@ -202,7 +206,7 @@
                     if(response.success == true){
                     Flash.setSuccess(response.message)
                     this.successModal = false
-                    this.getData()
+                    this.eventAccount();
                     }else{
                     Flash.setError(response.message)
                     }
@@ -213,8 +217,9 @@
                 updateAccount(this.formData,this.account_master_id).then(response => {
                     if(response.success == true){
                         Flash.setSuccess(response.message)
+                        this.eventAccount();
                     }else{
-                    Flash.setError(response.message)
+                        Flash.setError(response.message)
                     }
                 })
                 }
